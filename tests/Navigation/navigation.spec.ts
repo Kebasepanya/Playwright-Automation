@@ -21,6 +21,37 @@ test('Contact Details', async ({ page }) => {
 
 });
 
+test('Sleeping Arrangements', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary#sleeping-arrangements');
+const sleepingArrangements = page.locator(
+  'div.text-base.font-medium.text-gray-600',
+  { hasText: 'Sleeping arrangements' }
+);
+
+await expect(sleepingArrangements).toBeVisible();
+});
+
+
+
+test('Activities', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary#activities');
+const activities = page.locator(
+  'div.text-base.font-medium.text-gray-600',
+  { hasText: 'Activities' }
+);
+await expect(activities).toBeVisible();
+});
+
+
+
+test('Restaurants', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary#res');
+const restaurants = page.locator('div.text-base.font-medium.text-gray-600', { hasText: 'Restaurants' });
+await expect(restaurants).toBeVisible();
+});
+
+
+
 test('Location', async ({ page }) => {
     await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary#location');
 
@@ -29,4 +60,11 @@ test('Location', async ({ page }) => {
     const locationSection = page.locator('#location');
     await expect(locationSection).toBeVisible();
     await expect(locationSection.getByText(/Location/i)).toBeVisible();
+});
+
+
+test('Documents', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary#documents');
+const documents = page.locator('#documents');
+await expect(documents).toBeVisible();
 });
