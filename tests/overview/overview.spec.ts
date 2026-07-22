@@ -24,3 +24,8 @@ test('Correct Profile Type', async ({ page }) => {
         page.getByText('Stay')).toBeVisible();
 
 });
+
+test('Checking that the share button is displayed at the top of the page', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
+    await expect(page.getByRole('button', { name: 'Share' })).toBeVisible();
+});
