@@ -1,0 +1,26 @@
+import { test, expect } from '@playwright/test';
+
+test('Overview page loads', async ({ page }) => {
+  await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
+
+  await expect(page).toHaveURL("https://hub.dev.wetu.com/profile/348615/overview/summary");
+
+  await expect(page).toHaveTitle(/Wetu/i);
+});
+
+test('Property name is visible', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
+  
+    await expect(
+        page.locator('#overview-summary').getByText('Hotel Self-build')
+      ).toBeVisible();
+});
+
+
+test('Correct Profile Type', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
+
+    await expect(
+        page.getByText('Stay')).toBeVisible();
+
+});
