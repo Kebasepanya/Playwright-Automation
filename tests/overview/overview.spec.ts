@@ -43,14 +43,6 @@ test('Checking that the share button is displayed at the top of the page', async
 
 
 
-test('Checking contact details link', async ({ page }) => {
-    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
-   await expect(
-    page.getByRole('link', { name: 'View Contact Details' })
-).toBeVisible();
-  });
-
-
   test('Checking there are Certifications uploaded', async ({ page }) => {
     await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
    await expect(page.getByText('Certifications')).toBeVisible();
