@@ -28,6 +28,12 @@ test('Correct Profile Type', async ({ page }) => {
 });
 
 
+test('Checking that the Content Rating is correct', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
+    await expect(page.getByText('CR')).toBeVisible();
+});
+
+
 
 test('Checking that the share button is displayed at the top of the page', async ({ page }) => {
     await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
