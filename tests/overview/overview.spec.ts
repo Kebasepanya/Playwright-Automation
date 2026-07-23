@@ -50,4 +50,9 @@ test('Checking contact details link', async ({ page }) => {
 ).toBeVisible();
   });
 
+
+  test('Checking there are Certifications uploaded', async ({ page }) => {
+    await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
+   await expect(page.getByText('Certifications')).toBeVisible();
+  });
   
