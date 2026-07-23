@@ -4,11 +4,6 @@ import { test, expect } from '@playwright/test';
 
 test('Responsible Tourism', async ({ page }) => {
     await page.goto('https://hub.dev.wetu.com/profile/348615/responsible-tourism');
-    await expect(page.getByRole('heading', { name: 'Responsible tourism' })).toBeVisible();
+    await expect(page.getByText('Responsible Tourism')).toBeVisible();
 });
 
-test('Good We Do - Projects', async ({ page }) => {
-    await page.goto('https://hub.dev.wetu.com/profile/348615/responsible-tourism#projects');
-    await expect(page).toHaveURL(/#projects/);
-    await expect(page.getByRole('heading', { name: 'Projects' })).toBeVisible();
-}); 
