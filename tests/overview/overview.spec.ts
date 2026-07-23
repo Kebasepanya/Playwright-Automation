@@ -8,6 +8,8 @@ test('Overview page loads', async ({ page }) => {
   await expect(page).toHaveTitle(/Wetu/i);
 });
 
+
+
 test('Property name is visible', async ({ page }) => {
     await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
   
@@ -17,13 +19,14 @@ test('Property name is visible', async ({ page }) => {
 });
 
 
+
 test('Correct Profile Type', async ({ page }) => {
     await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
 
     await expect(
         page.getByText('Stay')).toBeVisible();
-
 });
+
 
 
 test('Checking that the share button is displayed at the top of the page', async ({ page }) => {
@@ -32,9 +35,13 @@ test('Checking that the share button is displayed at the top of the page', async
 });
 
 
+
+
 test('Checking contact details link', async ({ page }) => {
     await page.goto('https://hub.dev.wetu.com/profile/348615/overview/summary');
    await expect(
     page.getByRole('link', { name: 'View Contact Details' })
 ).toBeVisible();
   });
+
+  
